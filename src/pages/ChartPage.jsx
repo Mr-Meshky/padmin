@@ -1,8 +1,6 @@
 import React, { useRef } from "react";
 import CanvasJSReact from "@canvasjs/react-charts";
-//var CanvasJSReact = require('@canvasjs/react-charts');
 
-var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 function ChartPage() {
@@ -68,7 +66,7 @@ function ChartPage() {
   };
 
   return (
-    <div className="overflow-auto h-screen pb-24 pt-2 pr-2 pl-2 md:pt-0 md:pr-0 md:pl-0">
+    <div className="overflow-auto h-screen pb-24 pt-2 pr-2 pl-2 lg:pt-0 md:pr-0 md:pl-0 mt-14 lg:mt-0">
       <div className="flex flex-col flex-wrap sm:flex-row ">
         <div className="container mx-auto px-4 sm:px-8 max-w-8xl">
           <CanvasJSChart ref={chartRef} options={optionsFirst} />

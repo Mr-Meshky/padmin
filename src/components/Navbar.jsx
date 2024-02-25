@@ -1,12 +1,64 @@
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import logo from "./../assets/images/logo.png";
 
 function Navbar() {
+  const [isShow, setIsShow] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    if (isShow) {
+      menuRef.current.classList.add("block");
+      menuRef.current.classList.remove("hidden");
+    } else {
+      menuRef.current.classList.add("hidden");
+      menuRef.current.classList.remove("block");
+    }
+  }, [isShow]);
+
   return (
-    <div className="h-screen hidden lg:block my-4 mr-4 shadow-lg relative w-80">
-      <div className="bg-white dark:bg-slate-800 h-full rounded-2xl">
-        <div className="h-16 flex justify-center items-center">
+    <div className="lg:h-screen my-4 mr-4 shadow-lg lg:relative lg:top-0 w-80 z-10 lg:block absolute block top-[70px]">
+      <div
+        className="absolute top-1 mr-3 lg:hidden"
+        onClick={() => setIsShow((prevShow) => !prevShow)}
+      >
+        {!isShow ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-8 h-8 text-black dark:text-white"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        ) : (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="w-8 h-8 text-black dark:text-white"
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+              clipRule="evenodd"
+            />
+          </svg>
+        )}
+      </div>
+
+      <div
+        className="bg-white dark:bg-slate-800 h-full hidden rounded-2xl overflow-hidden lg:block"
+        ref={menuRef}
+      >
+        <div className="h-16 justify-center items-center hidden lg:flex">
           <h1 className="sr-only">پدمین</h1>
           <img src={logo} alt="پدمین" className="object-cover h-12 w-12" />
         </div>
@@ -87,7 +139,7 @@ function Navbar() {
             <span className="mx-4">آمار</span>
           </NavLink>
         </nav>
-        <div className="absolute bottom-0 my-10">
+        <div className="absolute bottom-0 my-10 hidden lg:block">
           <a
             className="text-gray-600 hover:text-gray-800 dark:hover:text-slate-50 transition-colors duration-200 flex items-center py-2 px-8"
             href="https://github.com/mr-meshky"

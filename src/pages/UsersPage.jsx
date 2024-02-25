@@ -6,7 +6,7 @@ function UsersPage() {
   const alertRef = useRef(null);
 
   return (
-    <div className="overflow-auto h-screen pb-24 pt-2 pr-2 pl-2 md:pt-0 md:pr-0 md:pl-0">
+    <div className="overflow-auto h-screen pb-24 pt-2 pr-2 pl-2 md:pt-0 md:pr-0 md:pl-0 mt-10 lg:mt-0">
       <div className="flex flex-col flex-wrap sm:flex-row ">
         <div className="container mx-auto px-4 sm:px-8 max-w-8xl">
           <div
@@ -40,22 +40,20 @@ function UsersPage() {
               <h2 className="text-2xl leading-tight dark:text-white">
                 کاربران
               </h2>
-              <div className="text-end">
-                <form className="flex gap-2 flex-col md:flex-row w-3/4 md:w-full max-w-sm md:space-x-3 space-y-3 md:space-y-0 justify-center">
-                  <input
-                    type="text"
-                    id='"form-subscribe-Filter'
-                    className="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent dark:bg-slate-700 dark:text-slate-50"
-                    placeholder="نام"
-                  />
-                  <button
-                    className="flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-purple-600 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200"
-                    type="submit"
-                  >
-                    فیلتر
-                  </button>
-                </form>
-              </div>
+              <form className="flex gap-2 flex-col md:flex-row w-3/4 md:w-full max-w-sm md:space-x-3 space-y-3 md:space-y-0 justify-center">
+                <input
+                  type="text"
+                  id='"form-subscribe-Filter'
+                  className="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent dark:bg-slate-700 dark:text-slate-50"
+                  placeholder="نام"
+                />
+                <button
+                  className="flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-purple-600 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200"
+                  type="submit"
+                >
+                  فیلتر
+                </button>
+              </form>
             </div>
             <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
               <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
